@@ -46,93 +46,255 @@
   </div>
 </nav>
 
-<!-- HOME (UPGRADED) -->
+<!-- HOME (ULTRA UPGRADED) -->
 <section id="home" class="min-h-screen flex items-center justify-center text-center px-6 relative overflow-hidden">
-  <!-- Glow Background -->
+
+  <!-- BACKGROUND GLOW -->
   <div class="glow top-0 left-0"></div>
   <div class="glow bottom-0 right-0"></div>
 
-  <!-- EXTRA LIGHT EFFECT -->
-  <div id="flashEffect" class="pointer-events-none fixed inset-0 opacity-0 bg-white transition-opacity duration-500"></div>
+  <!-- FLASH SCREEN EFFECT -->
+  <div id="flashEffect" class="pointer-events-none fixed inset-0 opacity-0 bg-white transition-opacity duration-300"></div>
 
   <div class="relative z-10 flex flex-col items-center">
 
     <!-- FOTO PROFILE -->
-    <div id="photoWrapper" class="relative mb-8 cursor-pointer group">
-      <img src="https://i.pravatar.cc/300" alt="Maya Indah Kartika"
-        class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-2 border-white/20 shadow-xl transition duration-500 group-hover:scale-105">
+    <div id="photoWrapper" class="relative mb-10 cursor-pointer">
+      
+      <!-- BACKLIGHT EFFECT -->
+      <div id="backGlow" class="absolute inset-0 rounded-full bg-white/10 blur-2xl opacity-0 scale-75 transition duration-500"></div>
 
-      <!-- GLOW RING -->
-      <div class="absolute inset-0 rounded-full border border-white/20 blur-md opacity-0 group-hover:opacity-100 transition"></div>
+      <img src="https://i.pravatar.cc/300" alt="Maya Indah Kartika"
+        class="relative w-44 h-44 md:w-52 md:h-52 rounded-full object-cover border border-white/20 shadow-2xl transition duration-500">
+
+      <!-- RING -->
+      <div class="absolute inset-0 rounded-full border border-white/20 animate-pulse"></div>
     </div>
 
     <!-- TEXT -->
-    <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-wide">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
       Maya Indah Kartika
     </h1>
 
-    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-      Senior Creative Professional specializing in digital design, web development, and branding strategy. Crafting elegant, high-impact digital experiences for modern businesses.
+    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Senior Creative Professional crafting elegant digital experiences through design, development, and branding strategy. Focused on delivering impactful and refined solutions.
     </p>
 
-    <div class="flex gap-4">
-      <a href="#projects" class="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition">
+    <!-- BUTTON -->
+    <div class="flex gap-4 flex-wrap justify-center">
+      <a href="#projects" class="px-8 py-3 rounded-full bg-white text-black font-medium hover:scale-105 transition">
         View Projects
       </a>
-      <a href="#contact" class="px-8 py-3 border border-white/30 rounded-full hover:border-white transition">
+      <a href="#contact" class="px-8 py-3 rounded-full border border-white/30 hover:border-white hover:scale-105 transition">
         Contact Me
       </a>
     </div>
 
   </div>
 
-  <!-- SCRIPT ANIMASI FOTO -->
+  <!-- PARTICLE EFFECT CONTAINER -->
+  <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+
+  <!-- SCRIPT ANIMASI -->
   <script>
     const photo = document.getElementById('photoWrapper');
     const flash = document.getElementById('flashEffect');
+    const glow = document.getElementById('backGlow');
+    const particles = document.getElementById('particles');
 
     photo.addEventListener('click', () => {
-      // Flash putih
+      // FLASH PUTIH
       flash.style.opacity = '1';
+      setTimeout(() => flash.style.opacity = '0', 150);
+
+      // BACK GLOW
+      glow.style.opacity = '1';
+      glow.style.transform = 'scale(1.4)';
 
       setTimeout(() => {
-        flash.style.opacity = '0';
-      }, 200);
+        glow.style.opacity = '0';
+        glow.style.transform = 'scale(0.7)';
+      }, 400);
 
-      // Animasi scale bounce
+      // SCALE ANIMATION
       photo.animate([
         { transform: 'scale(1)' },
-        { transform: 'scale(1.2)' },
+        { transform: 'scale(1.25)' },
         { transform: 'scale(1)' }
       ], {
         duration: 500,
         easing: 'ease-out'
       });
+
+      // PARTICLE EFFECT
+      for (let i = 0; i < 12; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'absolute w-2 h-2 bg-white rounded-full';
+
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 80 + Math.random() * 60;
+
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        dot.style.left = '50%';
+        dot.style.top = '50%';
+
+        particles.appendChild(dot);
+
+        dot.animate([
+          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+          { transform: `translate(${x}px, ${y}px) scale(0.3)`, opacity: 0 }
+        ], {
+          duration: 700,
+          easing: 'ease-out'
+        });
+
+        setTimeout(() => dot.remove(), 700);
+      }
     });
   </script>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="py-24 px-6 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-10">About</h2>
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-    <div class="glass p-8 rounded-2xl">
-      <p class="text-gray-300 leading-relaxed">
-        Maya Indah Kartika is a highly experienced professional specializing in web development, UI/UX design, and digital branding. With over 8+ years of experience, she has successfully collaborated with startups, agencies, and enterprise clients.
+<!-- ABOUT (PREMIUM) -->
+<section id="about" class="py-28 px-6 max-w-6xl mx-auto relative">
+
+  <!-- BACKGROUND SOFT GLOW -->
+  <div class="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[600px] bg-white/5 blur-[160px] rounded-full"></div>
+
+  <h2 class="text-4xl font-semibold mb-14 text-center tracking-wide">About Me</h2>
+
+  <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+
+    <!-- LEFT CONTENT -->
+    <div class="glass p-10 rounded-3xl relative overflow-hidden group">
+
+      <!-- subtle hover light -->
+      <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition"></div>
+
+      <p class="text-gray-300 leading-relaxed text-lg">
+        Maya Indah Kartika is a senior creative professional with a strong foundation in web development, UI/UX design, and digital branding. With more than <span class="text-white font-semibold">8 years of experience</span>, she has delivered high-quality digital solutions across startups, agencies, and enterprise environments.
         <br><br>
-        Her approach blends creativity with technical precision, resulting in elegant, high-performing digital products that stand out in competitive markets.
+        Her work focuses on combining <span class="text-white">aesthetic elegance</span> with <span class="text-white">technical precision</span>, ensuring each product is not only visually compelling but also highly functional and scalable.
       </p>
+
     </div>
 
-    <div class="glass p-8 rounded-2xl">
-      <ul class="space-y-4 text-gray-300">
-        <li><strong>Experience:</strong> 8+ Years</li>
-        <li><strong>Specialization:</strong> Web Development, UI/UX, Branding</li>
-        <li><strong>Clients:</strong> 50+ International Projects</li>
-        <li><strong>Location:</strong> Indonesia</li>
-      </ul>
+    <!-- RIGHT CONTENT -->
+    <div class="grid grid-cols-2 gap-6">
+
+      <!-- CARD -->
+      <div class="glass p-6 rounded-2xl text-center transition duration-500 card-animate">
+        <h3 class="text-3xl font-bold text-white counter" data-target="8">0</h3>
+        <p class="text-gray-400 mt-2">Years Experience</p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl text-center transition duration-500 card-animate">
+        <h3 class="text-3xl font-bold text-white counter" data-target="50">0</h3>
+        <p class="text-gray-400 mt-2">Projects</p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl text-center transition duration-500 card-animate">
+        <h3 class="text-3xl font-bold text-white counter" data-target="20">0</h3>
+        <p class="text-gray-400 mt-2">Clients</p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl text-center transition duration-500 card-animate">
+        <h3 class="text-3xl font-bold text-white">Global</h3>
+        <p class="text-gray-400 mt-2">Reach</p>
+      </div>
+
     </div>
+
   </div>
+
+  <!-- STYLE ANIMASI CARD -->
+  <style>
+    .card-animate {
+      transform: translateY(40px) scale(0.95);
+      opacity: 0;
+    }
+
+    .card-animate.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    .card-animate:hover {
+      transform: scale(1.08) rotateX(5deg) rotateY(-5deg);
+      box-shadow: 0 20px 40px rgba(255,255,255,0.15);
+    }
+  </style>
+
+  <!-- SCRIPT TAMBAHAN ANIMASI -->
+  <script>
+    const cards = document.querySelectorAll('.card-animate');
+
+    const observerCard = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observerCard.observe(card));
+
+    // tilt effect mouse
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = -(y / rect.height - 0.5) * 10;
+        const rotateY = (x / rect.width - 0.5) * 10;
+
+        card.style.transform = `scale(1.08) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  </script>
+
+</section>
+
+  <!-- SCRIPT COUNTER ANIMATION -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+
+    const runCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const speed = target / 60;
+
+      const update = () => {
+        count += speed;
+        if (count < target) {
+          counter.innerText = Math.floor(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+
+      update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counters.forEach(c => runCounter(c));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('#about'));
+  </script>
+
 </section>
 
 <!-- PROJECTS -->
@@ -187,18 +349,137 @@
   </div>
 </section>
 
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <!-- CONTACT -->
 <section id="contact" class="py-24 px-6 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-semibold mb-10">Contact</h2>
-  <div class="glass p-8 rounded-2xl">
-    <p class="text-gray-300 mb-6">Interested in working together? Feel free to reach out.</p>
-    <div class="space-y-3 text-gray-400">
-      <p><i class="fa fa-envelope"></i> maya@email.com</p>
-      <p><i class="fa fa-phone"></i> +62 812 3456 7890</p>
-      <p><i class="fa fa-location-dot"></i> Indonesia</p>
+
+  <h2 class="text-3xl font-semibold mb-12 text-center">
+    Contact
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <!-- LEFT -->
+    <div class="glass p-8 rounded-2xl relative overflow-hidden">
+
+      <!-- Glow -->
+      <div class="absolute -top-20 -left-20 w-60 h-60 bg-white/5 blur-3xl rounded-full"></div>
+
+      <h3 class="text-xl font-semibold mb-4">Let’s Work Together</h3>
+
+      <p class="text-gray-400 mb-8 leading-relaxed">
+        Interested in collaborating or have a project in mind? 
+        Feel free to reach out — I’m open to freelance, remote work, or full-time opportunities.
+      </p>
+
+      <!-- CTA -->
+      <a href="mailto:maya@email.com"
+         class="inline-block px-6 py-3 border border-white rounded-lg 
+                hover:bg-white hover:text-black transition">
+        Send Email
+      </a>
+
     </div>
+
+    <!-- RIGHT -->
+    <div class="space-y-6">
+
+      <!-- ITEM -->
+      <div class="contact-item flex items-center gap-4 glass p-5 rounded-xl cursor-pointer"
+           onclick="copyText('maya@email.com')">
+
+        <div class="icon">
+          <i class="fa fa-envelope"></i>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-400">Email</p>
+          <p class="text-white">maya@email.com</p>
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="contact-item flex items-center gap-4 glass p-5 rounded-xl cursor-pointer"
+           onclick="openWhatsApp()">
+
+        <div class="icon">
+          <i class="fa fa-phone"></i>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-400">Phone</p>
+          <p class="text-white">+62 812 3456 7890</p>
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="contact-item flex items-center gap-4 glass p-5 rounded-xl">
+
+        <div class="icon">
+          <i class="fa fa-location-dot"></i>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-400">Location</p>
+          <p class="text-white">Indonesia</p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
+<style>
+/* Icon style */
+.icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.contact-item {
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.contact-item:hover .icon {
+  background: white;
+  color: black;
+}
+</style>
+
+<script>
+// Copy email
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  alert("Email copied!");
+}
+
+// Open WhatsApp
+function openWhatsApp() {
+  window.open("https://wa.me/6281234567890", "_blank");
+}
+</script>
+
 
 <!-- FOOTER -->
 <footer class="text-center py-6 border-t border-white/10 text-gray-500">
