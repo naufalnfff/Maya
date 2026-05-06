@@ -1,0 +1,168 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maya Indah Kartika | Portfolio</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #050505;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px rgba(255, 0, 80, 0.2);
+  }
+</style>
+</head>
+
+<body class="text-white font-sans">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full bg-black/60 backdrop-blur-lg z-50 border-b border-white/10">
+  <div class="flex justify-between items-center px-[8%] py-4">
+    <h1 class="text-xl font-bold text-red-500">Maya Indah Kartika</h1>
+
+    <div class="space-x-6 text-sm hidden md:block">
+      <a href="#home" class="hover:text-red-500">Home</a>
+      <a href="#about" class="hover:text-red-500">About</a>
+      <a href="#hobby" class="hover:text-red-500">Hobby</a>
+      <a href="#projects" class="hover:text-red-500">Projects</a>
+      <a href="#education" class="hover:text-red-500">Education</a>
+      <a href="#skills" class="hover:text-red-500">Skills</a>
+      <a href="#contact" class="hover:text-red-500">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-[8%]">
+
+  <h2 class="text-5xl md:text-6xl font-bold mb-6">
+    Hi, I'm <span class="text-red-500">Maya Indah Kartika</span>
+  </h2>
+
+  <p class="text-gray-400 max-w-xl">
+    Profesional kreatif dengan pengalaman luas dalam pengembangan web, desain UI/UX, 
+    dan solusi digital modern.
+  </p>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-24 px-[8%]">
+  <h2 class="text-3xl font-bold mb-6 text-red-500">About</h2>
+
+  <p class="text-gray-400 leading-relaxed max-w-3xl">
+    Saya adalah seorang profesional berpengalaman dalam bidang teknologi dan desain digital. 
+    Memiliki kemampuan dalam membangun produk digital yang efisien, scalable, dan user-friendly. 
+    Fokus utama saya adalah menciptakan solusi yang tidak hanya menarik secara visual, 
+    tetapi juga memberikan pengalaman pengguna yang optimal.
+  </p>
+</section>
+
+<!-- ================= HOBBY ================= -->
+<section id="hobby" class="py-24 px-[8%]">
+  <h2 class="text-3xl font-bold mb-10 text-red-500">Hobby</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 bg-black/40 rounded-xl glow">Photography</div>
+    <div class="p-6 bg-black/40 rounded-xl glow">Traveling</div>
+    <div class="p-6 bg-black/40 rounded-xl glow">Design Exploration</div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="py-24 px-[8%]">
+  <h2 class="text-3xl font-bold mb-10 text-red-500">Projects</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="p-6 bg-black/40 rounded-xl hover:-translate-y-2 transition">
+      <h3 class="font-bold mb-2">E-Commerce Platform</h3>
+      <p class="text-gray-400 text-sm">Platform jual beli modern dengan fitur lengkap.</p>
+    </div>
+
+    <div class="p-6 bg-black/40 rounded-xl hover:-translate-y-2 transition">
+      <h3 class="font-bold mb-2">Company Dashboard</h3>
+      <p class="text-gray-400 text-sm">Dashboard analitik interaktif untuk bisnis.</p>
+    </div>
+
+    <div class="p-6 bg-black/40 rounded-xl hover:-translate-y-2 transition">
+      <h3 class="font-bold mb-2">Landing Page Premium</h3>
+      <p class="text-gray-400 text-sm">Desain modern dengan konversi tinggi.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="py-24 px-[8%]">
+  <h2 class="text-3xl font-bold mb-10 text-red-500">Education</h2>
+
+  <div class="space-y-4">
+    <div class="p-6 bg-black/40 rounded-xl">
+      <h3 class="font-semibold">Bachelor of Informatics</h3>
+      <p class="text-gray-400 text-sm">Universitas Teknologi Indonesia</p>
+    </div>
+
+    <div class="p-6 bg-black/40 rounded-xl">
+      <h3 class="font-semibold">UI/UX Certification</h3>
+      <p class="text-gray-400 text-sm">Professional Design Institute</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="py-24 px-[8%]">
+  <h2 class="text-3xl font-bold mb-10 text-red-500">Skills</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="p-6 bg-black/40 rounded-xl">HTML / CSS / JavaScript</div>
+    <div class="p-6 bg-black/40 rounded-xl">UI / UX Design</div>
+    <div class="p-6 bg-black/40 rounded-xl">React / Frontend Dev</div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24 px-[8%] text-center">
+
+  <h2 class="text-3xl font-bold mb-6 text-red-500">Contact</h2>
+
+  <p class="text-gray-400 mb-6">
+    Tertarik bekerja sama? Hubungi saya melalui email.
+  </p>
+
+  <button onclick="showAlert()" 
+    class="px-6 py-3 bg-red-500 text-black rounded-lg hover:scale-105 transition">
+    Kirim Email
+  </button>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center py-6 text-gray-500 text-sm border-t border-white/10">
+  © 2026 Maya Indah Kartika. All rights reserved.
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+  function showAlert() {
+    alert("Email: maya@email.com");
+  }
+</script>
+
+</body>
+</html>
+```
