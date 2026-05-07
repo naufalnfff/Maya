@@ -288,26 +288,45 @@
         class="absolute -inset-3 sm:-inset-4 rounded-full border border-white/10 animate-spinSlow">
       </div>
 
-      <!-- IMAGE -->
-      <img
-        src="image/naufall.jpeg"
-        alt="Maya Indah Kartika"
-        class="relative
-        w-36 h-36
-        sm:w-44 sm:h-44
-        md:w-56 md:h-56
-        rounded-full
-        object-cover object-top
-        border border-white/10
-        shadow-[0_20px_80px_rgba(255,255,255,0.10)]
-        transition-all duration-700 ease-out">
+      <!-- PHOTO -->
+<div
+  id="photoWrapper"
+  class="group relative mb-12 flex justify-center items-center mx-auto">
 
-      <!-- BORDER -->
-      <div
-        class="absolute inset-0 rounded-full border border-white/15 group-hover:border-white/40 transition-all duration-500">
-      </div>
+  <!-- OUTER GLOW -->
+  <div
+    class="absolute -inset-6 rounded-full bg-white/10 blur-3xl opacity-50 group-hover:opacity-100 transition-all duration-700">
+  </div>
 
-    </div>
+  <!-- CURSOR EFFECT -->
+  <div id="photoLight"></div>
+
+  <!-- ROTATING RING -->
+  <div
+    class="absolute -inset-4 rounded-full border border-white/10 animate-spinSlow">
+  </div>
+
+  <!-- IMAGE -->
+  <img
+    src="image/naufall.jpeg"
+    alt="Maya Indah Kartika"
+    class="relative
+    w-52 h-52
+    sm:w-64 sm:h-64
+    md:w-72 md:h-72
+    lg:w-80 lg:h-80
+    rounded-full
+    object-cover object-center
+    border border-white/10
+    shadow-[0_30px_120px_rgba(255,255,255,0.12)]
+    transition-all duration-700 ease-out">
+
+  <!-- BORDER -->
+  <div
+    class="absolute inset-0 rounded-full border border-white/15 group-hover:border-white/40 transition-all duration-500">
+  </div>
+
+</div>
 
     <!-- NAME -->
     <h1
@@ -659,54 +678,101 @@
 
 </section>
 
-<!-- ================= PROJECTS PREMIUM ================= -->
-<section id="projects" class="relative py-28 px-6 overflow-hidden">
+<!-- ================= PROJECTS ULTRA PREMIUM ================= -->
+<section id="projects"
+  class="relative py-24 sm:py-28 px-4 sm:px-6 overflow-hidden bg-black">
 
-  <!-- BACKGROUND GLOW -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/5 blur-[180px] rounded-full"></div>
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 bg-[#050505]"></div>
 
+  <!-- GRID -->
+  <div
+    class="absolute inset-0 opacity-[0.03]"
+    style="
+      background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 70px 70px;
+    ">
+  </div>
+
+  <!-- GLOW -->
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/5 blur-[180px] rounded-full">
+  </div>
+
+  <!-- CONTENT -->
   <div class="relative z-10 max-w-7xl mx-auto">
 
     <!-- HEADER -->
     <div class="text-center mb-16">
 
-      <p class="text-gray-400 uppercase tracking-[4px] text-sm mb-4">
+      <span
+        class="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-[11px] uppercase tracking-[0.3em] text-gray-400 mb-6">
         Selected Works
-      </p>
+      </span>
 
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
+
         Featured Projects
+
       </h2>
 
-      <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+      <p
+        class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg leading-relaxed">
+
         A collection of premium digital experiences crafted with
-        modern design principles, clean development, and elegant interactions.
+        modern UI systems, clean code architecture,
+        and elegant interactive design.
+
       </p>
 
     </div>
 
     <!-- GRID -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div
+      class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
 
-      <!-- CARD -->
-      <div class="project-card group relative overflow-hidden rounded-3xl glass border border-white/10">
+      <!-- ================= CARD ================= -->
+      <div
+        class="project-card group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
 
         <!-- IMAGE -->
-        <div class="relative overflow-hidden h-64">
+        <div class="relative overflow-hidden h-[260px]">
 
           <img
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-            alt="Corporate Website">
+            alt="Corporate Website"
+            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
           <!-- OVERLAY -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent">
+          </div>
 
-          <!-- CATEGORY -->
-          <div class="absolute top-5 left-5">
-            <span class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-lg text-sm border border-white/10">
+          <!-- TOP -->
+          <div
+            class="absolute top-5 left-5 right-5 flex items-center justify-between">
+
+            <!-- CATEGORY -->
+            <span
+              class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-xl text-xs border border-white/10">
               Branding
             </span>
+
+            <!-- LIVE -->
+            <div
+              class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+
+              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+
+              <span class="text-xs text-white/80">
+                Live
+              </span>
+
+            </div>
+
           </div>
 
         </div>
@@ -714,29 +780,53 @@
         <!-- CONTENT -->
         <div class="p-7">
 
-          <h3 class="text-2xl font-semibold mb-3">
+          <!-- TITLE -->
+          <h3
+            class="text-2xl font-semibold mb-3">
             Corporate Website
           </h3>
 
-          <p class="text-gray-400 leading-relaxed mb-6">
+          <!-- DESC -->
+          <p
+            class="text-gray-400 leading-relaxed mb-7">
+
             Elegant enterprise website with premium UI design,
-            responsive layout, and modern branding strategy.
+            responsive layout, smooth animation,
+            and modern branding strategy.
+
           </p>
 
-          <!-- FOOTER -->
-          <div class="flex items-center justify-between">
+          <!-- TECH -->
+          <div
+            class="flex flex-wrap gap-2 mb-8">
 
-            <!-- TECH -->
-            <div class="flex gap-2 flex-wrap">
-              <span class="tech">HTML</span>
-              <span class="tech">Tailwind</span>
-              <span class="tech">JavaScript</span>
-            </div>
+            <span class="tech">HTML</span>
+            <span class="tech">Tailwind</span>
+            <span class="tech">JavaScript</span>
 
-            <!-- ICON -->
-            <button class="view-btn">
+          </div>
+
+          <!-- BUTTONS -->
+          <div
+            class="flex items-center gap-3">
+
+            <!-- DEMO -->
+            <a href="https://your-demo-link.com"
+              target="_blank"
+              class="flex-1 text-center px-5 py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] hover:shadow-[0_15px_50px_rgba(255,255,255,0.16)] transition-all duration-300">
+
+              Live Demo
+
+            </a>
+
+            <!-- CODE -->
+            <a href="https://github.com/"
+              target="_blank"
+              class="w-14 h-14 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center hover:bg-white hover:text-black hover:rotate-6 transition-all duration-300">
+
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+
+            </a>
 
           </div>
 
@@ -744,22 +834,40 @@
 
       </div>
 
-      <!-- CARD -->
-      <div class="project-card group relative overflow-hidden rounded-3xl glass border border-white/10">
+      <!-- ================= CARD ================= -->
+      <div
+        class="project-card group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
 
-        <div class="relative overflow-hidden h-64">
+        <div class="relative overflow-hidden h-[260px]">
 
           <img
             src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-            alt="E-Commerce">
+            alt="E-Commerce"
+            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent">
+          </div>
 
-          <div class="absolute top-5 left-5">
-            <span class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-lg text-sm border border-white/10">
+          <div
+            class="absolute top-5 left-5 right-5 flex items-center justify-between">
+
+            <span
+              class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-xl text-xs border border-white/10">
               E-Commerce
             </span>
+
+            <div
+              class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+
+              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+
+              <span class="text-xs text-white/80">
+                Live
+              </span>
+
+            </div>
+
           </div>
 
         </div>
@@ -770,22 +878,39 @@
             E-Commerce Platform
           </h3>
 
-          <p class="text-gray-400 leading-relaxed mb-6">
-            Full-stack online shopping experience with seamless
-            checkout, optimized performance, and smooth UX flow.
+          <p class="text-gray-400 leading-relaxed mb-7">
+
+            Modern online shopping experience with seamless checkout,
+            optimized performance,
+            and premium mobile-first UX.
+
           </p>
 
-          <div class="flex items-center justify-between">
+          <div class="flex flex-wrap gap-2 mb-8">
 
-            <div class="flex gap-2 flex-wrap">
-              <span class="tech">React</span>
-              <span class="tech">Next.js</span>
-              <span class="tech">Stripe</span>
-            </div>
+            <span class="tech">React</span>
+            <span class="tech">Next.js</span>
+            <span class="tech">Stripe</span>
 
-            <button class="view-btn">
+          </div>
+
+          <div class="flex items-center gap-3">
+
+            <a href="https://your-demo-link.com"
+              target="_blank"
+              class="flex-1 text-center px-5 py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] hover:shadow-[0_15px_50px_rgba(255,255,255,0.16)] transition-all duration-300">
+
+              Live Demo
+
+            </a>
+
+            <a href="https://github.com/"
+              target="_blank"
+              class="w-14 h-14 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center hover:bg-white hover:text-black hover:rotate-6 transition-all duration-300">
+
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+
+            </a>
 
           </div>
 
@@ -793,22 +918,40 @@
 
       </div>
 
-      <!-- CARD -->
-      <div class="project-card group relative overflow-hidden rounded-3xl glass border border-white/10">
+      <!-- ================= CARD ================= -->
+      <div
+        class="project-card group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
 
-        <div class="relative overflow-hidden h-64">
+        <div class="relative overflow-hidden h-[260px]">
 
           <img
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-            alt="Portfolio">
+            alt="Portfolio"
+            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent">
+          </div>
 
-          <div class="absolute top-5 left-5">
-            <span class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-lg text-sm border border-white/10">
+          <div
+            class="absolute top-5 left-5 right-5 flex items-center justify-between">
+
+            <span
+              class="px-4 py-1 rounded-full bg-white/10 backdrop-blur-xl text-xs border border-white/10">
               Creative
             </span>
+
+            <div
+              class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
+
+              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+
+              <span class="text-xs text-white/80">
+                Live
+              </span>
+
+            </div>
+
           </div>
 
         </div>
@@ -819,22 +962,39 @@
             Portfolio System
           </h3>
 
-          <p class="text-gray-400 leading-relaxed mb-6">
-            Interactive portfolio platform with custom CMS,
-            animation system, and modern minimalist aesthetics.
+          <p class="text-gray-400 leading-relaxed mb-7">
+
+            Interactive portfolio platform with premium motion system,
+            custom CMS,
+            and modern minimalist aesthetics.
+
           </p>
 
-          <div class="flex items-center justify-between">
+          <div class="flex flex-wrap gap-2 mb-8">
 
-            <div class="flex gap-2 flex-wrap">
-              <span class="tech">Vue</span>
-              <span class="tech">GSAP</span>
-              <span class="tech">CMS</span>
-            </div>
+            <span class="tech">Vue</span>
+            <span class="tech">GSAP</span>
+            <span class="tech">CMS</span>
 
-            <button class="view-btn">
+          </div>
+
+          <div class="flex items-center gap-3">
+
+            <a href="https://your-demo-link.com"
+              target="_blank"
+              class="flex-1 text-center px-5 py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] hover:shadow-[0_15px_50px_rgba(255,255,255,0.16)] transition-all duration-300">
+
+              Live Demo
+
+            </a>
+
+            <a href="https://github.com/"
+              target="_blank"
+              class="w-14 h-14 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center hover:bg-white hover:text-black hover:rotate-6 transition-all duration-300">
+
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+
+            </a>
 
           </div>
 
@@ -850,8 +1010,7 @@
 
 <!-- ================= STYLE ================= -->
 <style>
-
-  /* PROJECT CARD */
+  /* CARD */
   .project-card {
     transition:
       transform .5s ease,
@@ -861,39 +1020,35 @@
 
   .project-card:hover {
     transform: translateY(-12px);
-    border-color: rgba(255,255,255,0.25);
+    border-color: rgba(255, 255, 255, 0.25);
 
     box-shadow:
-      0 25px 80px rgba(255,255,255,0.08),
-      0 0 30px rgba(255,255,255,0.04);
+      0 30px 100px rgba(255, 255, 255, 0.08),
+      0 0 40px rgba(255, 255, 255, 0.04);
   }
 
-  /* TECH BADGE */
+  /* TECH */
   .tech {
-    padding: 6px 14px;
+    padding: 7px 15px;
     border-radius: 9999px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 12px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.85);
+    transition: .3s;
   }
 
-  /* BUTTON */
-  .view-btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 9999px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.04);
-    transition: .4s;
-  }
-
-  .view-btn:hover {
+  .tech:hover {
     background: white;
     color: black;
-    transform: rotate(45deg) scale(1.08);
   }
 
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+  }
 </style>
 
 <!-- ================= EDUCATION COMPACT PREMIUM ================= -->
