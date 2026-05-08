@@ -331,96 +331,548 @@
 
 </div>
 
-<!-- ================= HOME ================= -->
+<!-- ================= HOME FINAL PREMIUM FIX ================= -->
 
 <section
   id="home"
-  class="relative min-h-[100svh] flex items-center justify-center overflow-hidden grid-bg">
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-5 sm:px-8 pt-32 pb-24">
 
-  <!-- GLOW -->
-  <div class="soft-glow top-[-120px] left-[-120px]"></div>
-  <div class="soft-glow bottom-[-120px] right-[-120px]"></div>
+  <!-- ================= BACKGROUND GRID ================= -->
+  <div
+    class="absolute inset-0 opacity-[0.035]"
+    style="
+      background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 72px 72px;
+    ">
+  </div>
 
-  <div class="container-premium relative z-10 text-center">
+  <!-- ================= TOP GLOW ================= -->
+  <div
+    class="absolute
+    top-[-260px]
+    left-[-220px]
+    w-[520px]
+    h-[520px]
+    bg-white/[0.05]
+    blur-[150px]
+    rounded-full">
+  </div>
 
-    <!-- LABEL -->
+  <!-- ================= BOTTOM GLOW ================= -->
+  <div
+    class="absolute
+    bottom-[-260px]
+    right-[-220px]
+    w-[520px]
+    h-[520px]
+    bg-white/[0.05]
+    blur-[150px]
+    rounded-full">
+  </div>
+
+  <!-- ================= CURSOR LIGHT ================= -->
+  <div id="cursorLight"></div>
+
+  <!-- ================= CONTENT ================= -->
+  <div
+    class="relative z-20
+    w-full
+    max-w-6xl
+    mx-auto
+    text-center">
+
+    <!-- ================= LABEL ================= -->
     <div
-      class="inline-flex mb-8 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03]">
+      class="relative z-30
 
-      <span class="text-[10px] tracking-[0.3em] uppercase text-gray-400">
+      inline-flex items-center gap-3
+
+      mb-10
+
+      px-5 sm:px-6
+      py-2.5
+
+      rounded-full
+
+      border border-white/10
+      bg-black/40
+      backdrop-blur-2xl">
+
+      <!-- DOT -->
+      <div class="relative flex items-center justify-center">
+
+        <div class="w-2 h-2 rounded-full bg-white"></div>
+
+        <div
+          class="absolute
+          w-2 h-2
+          rounded-full
+          bg-white
+          animate-ping
+          opacity-70">
+        </div>
+
+      </div>
+
+      <!-- TEXT -->
+      <span
+        class="text-[10px]
+        sm:text-[11px]
+        uppercase
+        tracking-[0.32em]
+        text-gray-300">
+
         Creative Developer • UI Designer
+
       </span>
 
     </div>
 
-    <!-- PHOTO -->
-    <div class="relative w-fit mx-auto mb-10 floating">
+    <!-- ================= PHOTO ================= -->
+    <div
+      id="photoWrapper"
+      class="relative
+      w-fit
+      mx-auto
+      mb-12
+      floating
+      group">
 
+      <!-- OUTER GLOW -->
       <div
-        class="absolute -inset-4 rounded-full border border-white/10 spinSlow">
+        class="absolute
+        -inset-10
+        rounded-full
+        bg-white/[0.08]
+        blur-[90px]
+        opacity-60
+        group-hover:opacity-100
+        transition-all duration-700">
       </div>
 
+      <!-- RING 1 -->
+      <div
+        class="absolute
+        -inset-4
+        rounded-full
+        border border-white/10
+        spinSlow">
+      </div>
+
+      <!-- RING 2 -->
+      <div
+        class="absolute
+        -inset-8
+        rounded-full
+        border border-dashed border-white/10
+        opacity-60
+        spinReverse">
+      </div>
+
+      <!-- RING 3 -->
+      <div
+        class="absolute
+        -inset-[18px]
+        rounded-full
+        border border-white/[0.05]">
+      </div>
+
+      <!-- IMAGE -->
       <img
         src="image/naufall.jpeg"
-        alt="Maya"
+        alt="Maya Indah Kartika"
+
         class="relative
-        w-32 h-32
-        sm:w-48 sm:h-48
-        md:w-60 md:h-60
+
+        w-40 h-40
+        sm:w-52 sm:h-52
+
+        md:w-[270px] md:h-[270px]
+
+        lg:w-[320px] lg:h-[320px]
+
         rounded-full
         object-cover
+        object-center
+
         border border-white/10
-        shadow-[0_20px_80px_rgba(255,255,255,0.08)]">
+
+        shadow-[0_35px_120px_rgba(255,255,255,0.14)]
+
+        transition-all duration-700">
+
+      <!-- OVERLAY -->
+      <div
+        class="absolute
+        inset-0
+        rounded-full
+
+        bg-gradient-to-b
+        from-white/10
+        via-transparent
+        to-black/25">
+      </div>
+
+      <!-- BORDER -->
+      <div
+        class="absolute
+        inset-0
+        rounded-full
+        border border-white/15
+        group-hover:border-white/40
+        transition-all duration-500">
+      </div>
 
     </div>
 
-    <!-- NAME -->
+    <!-- ================= NAME ================= -->
     <h1
-      class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+      class="relative z-20
+
+      text-4xl
+      sm:text-6xl
+      md:text-7xl
+      lg:text-[88px]
+
+      font-black
+      leading-[0.95]
+      tracking-tight
+
+      mb-7">
 
       <span
-        class="bg-gradient-to-b from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">
+        class="bg-gradient-to-b
+        from-white
+        via-gray-200
+        to-gray-500
+        bg-clip-text
+        text-transparent">
 
-        Maya Indah Kartika
+        Maya Indah
+        <br class="hidden sm:block">
+        Kartika
 
       </span>
 
     </h1>
 
-    <!-- DESC -->
+    <!-- ================= DESCRIPTION ================= -->
     <p
-      class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-lg leading-relaxed mb-10">
+      class="relative z-20
 
-      Senior Creative Professional crafting elegant digital experiences
-      through modern design, clean development,
-      and refined premium aesthetics.
+      max-w-3xl
+      mx-auto
+
+      text-gray-400
+
+      text-[14px]
+      sm:text-lg
+      md:text-xl
+
+      leading-relaxed
+
+      mb-12
+
+      px-2">
+
+      Senior Creative Professional specializing in
+      premium digital experiences, elegant interface systems,
+      modern frontend development,
+      and refined interactive aesthetics for world-class brands.
 
     </p>
 
-    <!-- BUTTON -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <!-- ================= BUTTONS ================= -->
+    <div
+      class="relative z-20
 
+      flex flex-col sm:flex-row
+      items-center justify-center
+
+      gap-3 sm:gap-5">
+
+      <!-- PRIMARY -->
       <a
         href="#projects"
-        class="px-8 py-3 rounded-full bg-white text-black font-medium hover:scale-105 transition">
 
-        View Projects
+        class="group relative overflow-hidden
+
+        text-[12px] sm:text-[15px]
+
+        px-5 py-2.5
+        sm:px-8 sm:py-3.5
+
+        rounded-full
+
+        bg-white
+        text-black
+        font-semibold
+
+        transition-all duration-300
+
+        hover:scale-105
+        hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)]">
+
+        <!-- HOVER -->
+        <div
+          class="absolute inset-0
+
+          bg-gradient-to-r
+          from-white
+          to-gray-300
+
+          opacity-0
+          group-hover:opacity-100
+
+          transition duration-500">
+        </div>
+
+        <span class="relative z-10 flex items-center gap-2">
+
+          View Projects
+
+          <i
+            class="fa-solid fa-arrow-right
+            text-[11px]
+            sm:text-xs
+            group-hover:translate-x-1
+            transition duration-300">
+          </i>
+
+        </span>
 
       </a>
 
+      <!-- SECONDARY -->
       <a
         href="#contact"
-        class="px-8 py-3 rounded-full border border-white/10 bg-white/[0.03] hover:border-white/30 transition">
 
-        Contact Me
+        class="group
+
+        text-[12px] sm:text-[15px]
+
+        px-5 py-2.5
+        sm:px-8 sm:py-3.5
+
+        rounded-full
+
+        border border-white/10
+        bg-white/[0.03]
+        backdrop-blur-xl
+
+        text-white
+        font-medium
+
+        hover:border-white/30
+        hover:bg-white/[0.06]
+        hover:scale-105
+
+        transition-all duration-300">
+
+        <span class="flex items-center gap-2">
+
+          Contact Me
+
+          <i
+            class="fa-regular fa-envelope
+            text-[11px]
+            sm:text-xs">
+          </i>
+
+        </span>
 
       </a>
+
+    </div>
+
+    <!-- ================= SCROLL ================= -->
+    <div class="mt-16 hidden sm:flex justify-center">
+
+      <div
+        class="w-7 h-12
+
+        rounded-full
+
+        border border-white/10
+
+        flex justify-center
+
+        p-2">
+
+        <div
+          class="w-1.5 h-3
+          rounded-full
+          bg-white/70
+          scrollDot">
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
 </section>
+
+<!-- ================= STYLE ================= -->
+
+<style>
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ================= CURSOR LIGHT ================= */
+
+  #cursorLight {
+
+    position: fixed;
+
+    width: 340px;
+    height: 340px;
+
+    border-radius: 9999px;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(255,255,255,0.08),
+        transparent 70%
+      );
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+
+    filter: blur(25px);
+
+  }
+
+  /* ================= FLOAT ================= */
+
+  @keyframes floating {
+
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-14px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+
+  }
+
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  /* ================= SPIN ================= */
+
+  @keyframes spinSlow {
+
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+
+  }
+
+  .spinSlow {
+    animation: spinSlow 16s linear infinite;
+  }
+
+  /* ================= SPIN REVERSE ================= */
+
+  @keyframes spinReverse {
+
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+
+  }
+
+  .spinReverse {
+    animation: spinReverse 22s linear infinite;
+  }
+
+  /* ================= IMAGE HOVER ================= */
+
+  #photoWrapper:hover img {
+
+    transform: scale(1.05);
+
+    box-shadow:
+      0 40px 140px rgba(255,255,255,0.18),
+      0 0 80px rgba(255,255,255,0.08);
+
+  }
+
+  /* ================= SCROLL ================= */
+
+  @keyframes scrollAnim {
+
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(14px);
+      opacity: 0;
+    }
+
+  }
+
+  .scrollDot {
+    animation: scrollAnim 1.5s infinite;
+  }
+
+  /* ================= MOBILE FIX ================= */
+
+  @media (max-width: 768px) {
+
+    #cursorLight {
+      display: none;
+    }
+
+    #home {
+      padding-top: 120px;
+      padding-bottom: 90px;
+    }
+
+  }
+
+</style>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+  const cursorLight = document.getElementById('cursorLight');
+
+  window.addEventListener('mousemove', (e) => {
+
+    cursorLight.style.left = e.clientX + 'px';
+    cursorLight.style.top = e.clientY + 'px';
+
+  });
+
+</script>
 
 <!-- ================= ABOUT ================= -->
 
