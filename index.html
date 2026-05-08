@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Maya Indah Kartika | Premium Portfolio</title>
+  <title>Maya Indah Kartika | Learning & Development Portfolio</title>
 
-  <!-- TAILWIND -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FONT AWESOME -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -23,54 +38,80 @@
     body{
       background:#050505;
       color:white;
+      font-family:'Inter',sans-serif;
       overflow-x:hidden;
-      font-family:Inter,sans-serif;
     }
 
-    /* ================= GLOBAL ================= */
+    /* ================= SCROLLBAR ================= */
 
-    .glass{
-      background:rgba(255,255,255,.03);
-      backdrop-filter:blur(16px);
-      border:1px solid rgba(255,255,255,.08);
+    ::-webkit-scrollbar{
+      width:8px;
     }
 
-    .section-space{
-      padding-top:90px;
-      padding-bottom:90px;
+    ::-webkit-scrollbar-track{
+      background:#050505;
     }
+
+    ::-webkit-scrollbar-thumb{
+      background:rgba(255,255,255,.15);
+      border-radius:999px;
+    }
+
+    /* ================= CONTAINER ================= */
 
     .container-premium{
       width:100%;
       max-width:1200px;
       margin:auto;
-      padding-left:20px;
-      padding-right:20px;
+      padding-left:24px;
+      padding-right:24px;
+      position:relative;
+      z-index:5;
     }
+
+    .section-space{
+      padding-top:110px;
+      padding-bottom:110px;
+      position:relative;
+    }
+
+    /* ================= BACKGROUND ================= */
 
     .grid-bg{
       background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
 
       background-size:70px 70px;
     }
 
     .soft-glow{
       position:absolute;
-      width:380px;
-      height:380px;
-      border-radius:9999px;
+      width:500px;
+      height:500px;
+      border-radius:999px;
+      filter:blur(130px);
       background:rgba(255,255,255,.04);
-      filter:blur(120px);
       z-index:0;
+    }
+
+    /* ================= GLASS ================= */
+
+    .glass{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
     }
 
     /* ================= NAVBAR ================= */
 
+    nav{
+      backdrop-filter:blur(20px);
+    }
+
     .nav-link{
       position:relative;
-      color:rgba(255,255,255,.75);
+      color:rgba(255,255,255,.7);
       transition:.3s;
     }
 
@@ -82,16 +123,18 @@
       content:'';
       position:absolute;
       left:0;
-      bottom:-6px;
+      bottom:-7px;
       width:0%;
       height:1px;
       background:white;
-      transition:.3s;
+      transition:.35s;
     }
 
     .nav-link:hover::after{
       width:100%;
     }
+
+    /* ================= MOBILE MENU ================= */
 
     .mobile-link{
       font-size:2rem;
@@ -106,13 +149,20 @@
 
     /* ================= HOME ================= */
 
+    #home{
+      min-height:100vh;
+      padding-top:140px;
+      padding-bottom:140px;
+      overflow:hidden;
+    }
+
     @keyframes floating{
       0%{
         transform:translateY(0px);
       }
 
       50%{
-        transform:translateY(-10px);
+        transform:translateY(-12px);
       }
 
       100%{
@@ -138,52 +188,101 @@
       animation:spinSlow 18s linear infinite;
     }
 
+    @keyframes spinReverse{
+      from{
+        transform:rotate(360deg);
+      }
+
+      to{
+        transform:rotate(0deg);
+      }
+    }
+
+    .spinReverse{
+      animation:spinReverse 25s linear infinite;
+    }
+
     /* ================= CARD ================= */
 
     .premium-card{
       transition:
       transform .45s ease,
       border-color .45s ease,
+      background .45s ease,
       box-shadow .45s ease;
     }
 
     .premium-card:hover{
       transform:translateY(-8px);
-      border-color:rgba(255,255,255,.18);
 
-      box-shadow:
-      0 20px 60px rgba(255,255,255,.06);
-    }
-
-    /* ================= TECH ================= */
-
-    .tech{
-      padding:7px 14px;
-      border-radius:999px;
-      font-size:12px;
+      border-color:rgba(255,255,255,.16);
 
       background:rgba(255,255,255,.05);
 
-      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+      0 20px 60px rgba(255,255,255,.05);
+    }
 
+    /* ================= TAG ================= */
+
+    .tag{
+      padding:8px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:13px;
       transition:.3s;
     }
 
-    .tech:hover{
+    .tag:hover{
       background:white;
       color:black;
+    }
+
+    /* ================= TIMELINE ================= */
+
+    .timeline{
+      position:relative;
+      padding-left:28px;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:6px;
+      top:0;
+      width:1px;
+      height:100%;
+      background:rgba(255,255,255,.1);
+    }
+
+    .timeline-item{
+      position:relative;
+      padding-bottom:42px;
+    }
+
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-27px;
+      top:7px;
+      width:13px;
+      height:13px;
+      border-radius:999px;
+      background:white;
+      box-shadow:0 0 20px rgba(255,255,255,.5);
     }
 
     /* ================= CONTACT ================= */
 
     .contact-item{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       gap:16px;
 
-      padding:16px;
+      padding:20px;
 
-      border-radius:20px;
+      border-radius:24px;
 
       background:rgba(255,255,255,.03);
 
@@ -193,7 +292,7 @@
     }
 
     .contact-item:hover{
-      transform:translateY(-4px);
+      transform:translateY(-5px);
 
       border-color:rgba(255,255,255,.18);
 
@@ -201,36 +300,29 @@
     }
 
     .contact-icon{
-      width:46px;
-      height:46px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      border-radius:14px;
-
-      background:rgba(255,255,255,.05);
-
-      border:1px solid rgba(255,255,255,.08);
-
-      transition:.35s;
-    }
-
-    .contact-item:hover .contact-icon{
-      background:white;
-      color:black;
-    }
-
-    .social-btn{
-      width:48px;
-      height:48px;
+      min-width:50px;
+      height:50px;
 
       display:flex;
       align-items:center;
       justify-content:center;
 
       border-radius:16px;
+
+      background:rgba(255,255,255,.05);
+
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .social-btn{
+      width:52px;
+      height:52px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:18px;
 
       background:rgba(255,255,255,.04);
 
@@ -240,11 +332,36 @@
     }
 
     .social-btn:hover{
-      transform:translateY(-4px);
+      transform:translateY(-5px);
 
       background:white;
 
       color:black;
+    }
+
+    /* ================= CURSOR ================= */
+
+    #cursorLight{
+
+      position:fixed;
+
+      width:350px;
+      height:350px;
+
+      border-radius:999px;
+
+      background:
+      radial-gradient(circle,
+      rgba(255,255,255,.08),
+      transparent 70%);
+
+      pointer-events:none;
+
+      transform:translate(-50%,-50%);
+
+      z-index:1;
+
+      filter:blur(25px);
     }
 
     /* ================= RESPONSIVE ================= */
@@ -252,51 +369,64 @@
     @media(max-width:768px){
 
       .section-space{
-        padding-top:70px;
-        padding-bottom:70px;
+        padding-top:85px;
+        padding-bottom:85px;
+      }
+
+      #home{
+        padding-top:130px;
+        padding-bottom:110px;
       }
 
       .mobile-link{
-        font-size:1.7rem;
+        font-size:1.6rem;
       }
 
       .soft-glow{
-        width:220px;
-        height:220px;
+        width:250px;
+        height:250px;
+      }
+
+      #cursorLight{
+        display:none;
       }
 
     }
 
   </style>
+
 </head>
 
-<body>
+<body class="grid-bg">
+
+<!-- ================= CURSOR LIGHT ================= -->
+
+<div id="cursorLight"></div>
 
 <!-- ================= NAVBAR ================= -->
 
-<nav class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/60 backdrop-blur-2xl">
+<nav class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/60">
 
   <div class="container-premium">
 
-    <div class="h-[72px] flex items-center justify-between">
+    <div class="h-[78px] flex items-center justify-between">
 
       <!-- LOGO -->
-      <a
-        href="#home"
-        class="text-sm sm:text-lg md:text-xl font-semibold tracking-wide truncate">
+      <a href="#home"
+        class="text-sm sm:text-lg md:text-xl font-semibold tracking-wide">
 
         Maya Indah Kartika
 
       </a>
 
-      <!-- DESKTOP MENU -->
+      <!-- MENU -->
       <div class="hidden md:flex items-center gap-8 text-sm">
 
-        <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="#contact" class="nav-link">Contact</a>
 
       </div>
@@ -322,162 +452,51 @@
   id="mobileMenu"
   class="fixed inset-0 bg-black/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition duration-500">
 
-  <a href="#home" class="mobile-link">Home</a>
   <a href="#about" class="mobile-link">About</a>
-  <a href="#projects" class="mobile-link">Projects</a>
-  <a href="#education" class="mobile-link">Education</a>
+  <a href="#experience" class="mobile-link">Experience</a>
   <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#education" class="mobile-link">Education</a>
+  <a href="#projects" class="mobile-link">Projects</a>
   <a href="#contact" class="mobile-link">Contact</a>
 
 </div>
 
-<!-- ================= HOME FINAL PREMIUM FIX ================= -->
+<!-- ================= HERO ================= -->
 
-<section
-  id="home"
-  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-5 sm:px-8 pt-32 pb-24">
+<section id="home" class="relative flex items-center justify-center">
 
-  <!-- ================= BACKGROUND GRID ================= -->
-  <div
-    class="absolute inset-0 opacity-[0.035]"
-    style="
-      background-image:
-      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
-      background-size: 72px 72px;
-    ">
-  </div>
+  <!-- GLOW -->
+  <div class="soft-glow top-[-150px] left-[-150px]"></div>
+  <div class="soft-glow bottom-[-150px] right-[-150px]"></div>
 
-  <!-- ================= TOP GLOW ================= -->
-  <div
-    class="absolute
-    top-[-260px]
-    left-[-220px]
-    w-[520px]
-    h-[520px]
-    bg-white/[0.05]
-    blur-[150px]
-    rounded-full">
-  </div>
+  <div class="container-premium text-center">
 
-  <!-- ================= BOTTOM GLOW ================= -->
-  <div
-    class="absolute
-    bottom-[-260px]
-    right-[-220px]
-    w-[520px]
-    h-[520px]
-    bg-white/[0.05]
-    blur-[150px]
-    rounded-full">
-  </div>
+    <!-- LABEL -->
+    <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full glass mb-10">
 
-  <!-- ================= CURSOR LIGHT ================= -->
-  <div id="cursorLight"></div>
-
-  <!-- ================= CONTENT ================= -->
-  <div
-    class="relative z-20
-    w-full
-    max-w-6xl
-    mx-auto
-    text-center">
-
-    <!-- ================= LABEL ================= -->
-    <div
-      class="relative z-30
-
-      inline-flex items-center gap-3
-
-      mb-10
-
-      px-5 sm:px-6
-      py-2.5
-
-      rounded-full
-
-      border border-white/10
-      bg-black/40
-      backdrop-blur-2xl">
-
-      <!-- DOT -->
       <div class="relative flex items-center justify-center">
 
         <div class="w-2 h-2 rounded-full bg-white"></div>
 
-        <div
-          class="absolute
-          w-2 h-2
-          rounded-full
-          bg-white
-          animate-ping
-          opacity-70">
-        </div>
+        <div class="absolute w-2 h-2 rounded-full bg-white animate-ping"></div>
 
       </div>
 
-      <!-- TEXT -->
-      <span
-        class="text-[10px]
-        sm:text-[11px]
-        uppercase
-        tracking-[0.32em]
-        text-gray-300">
+      <span class="uppercase tracking-[0.3em] text-[11px] text-gray-300">
 
-        Creative Developer • UI Designer
+        Learning & Development Professional
 
       </span>
 
     </div>
 
-    <!-- ================= PHOTO ================= -->
-    <div
-      id="photoWrapper"
-      class="relative
-      w-fit
-      mx-auto
-      mb-12
-      floating
-      group">
+    <!-- PHOTO -->
+    <div class="relative w-fit mx-auto mb-12 floating group">
 
-      <!-- OUTER GLOW -->
-      <div
-        class="absolute
-        -inset-10
-        rounded-full
-        bg-white/[0.08]
-        blur-[90px]
-        opacity-60
-        group-hover:opacity-100
-        transition-all duration-700">
-      </div>
+      <!-- RING -->
+      <div class="absolute -inset-5 rounded-full border border-white/10 spinSlow"></div>
 
-      <!-- RING 1 -->
-      <div
-        class="absolute
-        -inset-4
-        rounded-full
-        border border-white/10
-        spinSlow">
-      </div>
-
-      <!-- RING 2 -->
-      <div
-        class="absolute
-        -inset-8
-        rounded-full
-        border border-dashed border-white/10
-        opacity-60
-        spinReverse">
-      </div>
-
-      <!-- RING 3 -->
-      <div
-        class="absolute
-        -inset-[18px]
-        rounded-full
-        border border-white/[0.05]">
-      </div>
+      <div class="absolute -inset-10 rounded-full border border-dashed border-white/10 spinReverse"></div>
 
       <!-- IMAGE -->
       <img
@@ -485,62 +504,25 @@
         alt="Maya Indah Kartika"
 
         class="relative
-
-        w-40 h-40
-        sm:w-52 sm:h-52
-
-        md:w-[270px] md:h-[270px]
-
-        lg:w-[320px] lg:h-[320px]
-
+        w-44 h-44
+        sm:w-56 sm:h-56
+        md:w-[290px] md:h-[290px]
         rounded-full
         object-cover
-        object-center
-
         border border-white/10
-
-        shadow-[0_35px_120px_rgba(255,255,255,0.14)]
-
-        transition-all duration-700">
-
-      <!-- OVERLAY -->
-      <div
-        class="absolute
-        inset-0
-        rounded-full
-
-        bg-gradient-to-b
-        from-white/10
-        via-transparent
-        to-black/25">
-      </div>
-
-      <!-- BORDER -->
-      <div
-        class="absolute
-        inset-0
-        rounded-full
-        border border-white/15
-        group-hover:border-white/40
-        transition-all duration-500">
-      </div>
+        shadow-[0_30px_100px_rgba(255,255,255,.15)]
+        transition duration-700
+        group-hover:scale-105">
 
     </div>
 
-    <!-- ================= NAME ================= -->
+    <!-- TITLE -->
     <h1
-      class="relative z-20
-
-      text-4xl
-      sm:text-6xl
-      md:text-7xl
-      lg:text-[88px]
-
+      class="text-5xl sm:text-6xl md:text-7xl lg:text-[92px]
       font-black
       leading-[0.95]
       tracking-tight
-
-      mb-7">
+      mb-8">
 
       <span
         class="bg-gradient-to-b
@@ -551,328 +533,58 @@
         text-transparent">
 
         Maya Indah
-        <br class="hidden sm:block">
+        <br>
         Kartika
 
       </span>
 
     </h1>
 
-    <!-- ================= DESCRIPTION ================= -->
+    <!-- DESCRIPTION -->
     <p
-      class="relative z-20
+      class="max-w-4xl mx-auto text-gray-400 leading-relaxed
+      text-[15px] sm:text-lg md:text-xl mb-12">
 
-      max-w-3xl
-      mx-auto
-
-      text-gray-400
-
-      text-[14px]
-      sm:text-lg
-      md:text-xl
-
-      leading-relaxed
-
-      mb-12
-
-      px-2">
-
-      Senior Creative Professional specializing in
-      premium digital experiences, elegant interface systems,
-      modern frontend development,
-      and refined interactive aesthetics for world-class brands.
+      Learning & Development, Instructional Design,
+      and Program Development professional with 6+ years
+      of experience designing scalable learning journeys,
+      competency-based programs, curriculum systems,
+      and workforce development initiatives across education technology,
+      consulting, and corporate environments.
 
     </p>
 
-    <!-- ================= BUTTONS ================= -->
-    <div
-      class="relative z-20
+    <!-- BUTTON -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-      flex flex-col sm:flex-row
-      items-center justify-center
-
-      gap-3 sm:gap-5">
-
-      <!-- PRIMARY -->
       <a
-        href="#projects"
+        href="#experience"
 
-        class="group relative overflow-hidden
+        class="px-8 py-4 rounded-full bg-white text-black font-semibold
+        hover:scale-105 transition duration-300">
 
-        text-[12px] sm:text-[15px]
-
-        px-5 py-2.5
-        sm:px-8 sm:py-3.5
-
-        rounded-full
-
-        bg-white
-        text-black
-        font-semibold
-
-        transition-all duration-300
-
-        hover:scale-105
-        hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)]">
-
-        <!-- HOVER -->
-        <div
-          class="absolute inset-0
-
-          bg-gradient-to-r
-          from-white
-          to-gray-300
-
-          opacity-0
-          group-hover:opacity-100
-
-          transition duration-500">
-        </div>
-
-        <span class="relative z-10 flex items-center gap-2">
-
-          View Projects
-
-          <i
-            class="fa-solid fa-arrow-right
-            text-[11px]
-            sm:text-xs
-            group-hover:translate-x-1
-            transition duration-300">
-          </i>
-
-        </span>
+        View Experience
 
       </a>
 
-      <!-- SECONDARY -->
       <a
         href="#contact"
 
-        class="group
-
-        text-[12px] sm:text-[15px]
-
-        px-5 py-2.5
-        sm:px-8 sm:py-3.5
-
-        rounded-full
-
-        border border-white/10
+        class="px-8 py-4 rounded-full border border-white/10
         bg-white/[0.03]
-        backdrop-blur-xl
-
-        text-white
-        font-medium
-
-        hover:border-white/30
         hover:bg-white/[0.06]
-        hover:scale-105
+        hover:border-white/30
+        transition duration-300">
 
-        transition-all duration-300">
-
-        <span class="flex items-center gap-2">
-
-          Contact Me
-
-          <i
-            class="fa-regular fa-envelope
-            text-[11px]
-            sm:text-xs">
-          </i>
-
-        </span>
+        Contact Me
 
       </a>
-
-    </div>
-
-    <!-- ================= SCROLL ================= -->
-    <div class="mt-16 hidden sm:flex justify-center">
-
-      <div
-        class="w-7 h-12
-
-        rounded-full
-
-        border border-white/10
-
-        flex justify-center
-
-        p-2">
-
-        <div
-          class="w-1.5 h-3
-          rounded-full
-          bg-white/70
-          scrollDot">
-        </div>
-
-      </div>
 
     </div>
 
   </div>
 
 </section>
-
-<!-- ================= STYLE ================= -->
-
-<style>
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* ================= CURSOR LIGHT ================= */
-
-  #cursorLight {
-
-    position: fixed;
-
-    width: 340px;
-    height: 340px;
-
-    border-radius: 9999px;
-
-    background:
-      radial-gradient(
-        circle,
-        rgba(255,255,255,0.08),
-        transparent 70%
-      );
-
-    pointer-events: none;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 1;
-
-    filter: blur(25px);
-
-  }
-
-  /* ================= FLOAT ================= */
-
-  @keyframes floating {
-
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(-14px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-
-  }
-
-  .floating {
-    animation: floating 6s ease-in-out infinite;
-  }
-
-  /* ================= SPIN ================= */
-
-  @keyframes spinSlow {
-
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-
-  }
-
-  .spinSlow {
-    animation: spinSlow 16s linear infinite;
-  }
-
-  /* ================= SPIN REVERSE ================= */
-
-  @keyframes spinReverse {
-
-    from {
-      transform: rotate(360deg);
-    }
-
-    to {
-      transform: rotate(0deg);
-    }
-
-  }
-
-  .spinReverse {
-    animation: spinReverse 22s linear infinite;
-  }
-
-  /* ================= IMAGE HOVER ================= */
-
-  #photoWrapper:hover img {
-
-    transform: scale(1.05);
-
-    box-shadow:
-      0 40px 140px rgba(255,255,255,0.18),
-      0 0 80px rgba(255,255,255,0.08);
-
-  }
-
-  /* ================= SCROLL ================= */
-
-  @keyframes scrollAnim {
-
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(14px);
-      opacity: 0;
-    }
-
-  }
-
-  .scrollDot {
-    animation: scrollAnim 1.5s infinite;
-  }
-
-  /* ================= MOBILE FIX ================= */
-
-  @media (max-width: 768px) {
-
-    #cursorLight {
-      display: none;
-    }
-
-    #home {
-      padding-top: 120px;
-      padding-bottom: 90px;
-    }
-
-  }
-
-</style>
-
-<!-- ================= SCRIPT ================= -->
-
-<script>
-
-  const cursorLight = document.getElementById('cursorLight');
-
-  window.addEventListener('mousemove', (e) => {
-
-    cursorLight.style.left = e.clientX + 'px';
-    cursorLight.style.top = e.clientY + 'px';
-
-  });
-
-</script>
 
 <!-- ================= ABOUT ================= -->
 
@@ -880,215 +592,94 @@
 
   <div class="soft-glow top-0 left-1/2 -translate-x-1/2"></div>
 
-  <div class="container-premium relative z-10">
-
-    <div class="text-center mb-16">
-
-      <h2 class="text-4xl md:text-5xl font-bold mb-5">
-        About Me
-      </h2>
-
-      <p class="text-gray-400 max-w-2xl mx-auto">
-        Combining creativity and technology to craft premium digital experiences.
-      </p>
-
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-8 items-center">
-
-      <!-- LEFT -->
-      <div class="glass rounded-3xl p-6 sm:p-10 premium-card">
-
-        <p class="text-gray-300 leading-relaxed">
-
-          Maya Indah Kartika is a senior creative professional with expertise
-          in web development, UI/UX design, and branding systems.
-
-          <br><br>
-
-          With more than 8 years of experience, she has worked on premium
-          digital products focused on performance,
-          elegance, and modern user experience.
-
-        </p>
-
-      </div>
-
-      <!-- RIGHT -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-        <div class="glass rounded-3xl p-6 premium-card text-center">
-          <h3 class="text-4xl font-bold mb-2">8+</h3>
-          <p class="text-gray-400">Years Experience</p>
-        </div>
-
-        <div class="glass rounded-3xl p-6 premium-card text-center">
-          <h3 class="text-4xl font-bold mb-2">50+</h3>
-          <p class="text-gray-400">Projects</p>
-        </div>
-
-        <div class="glass rounded-3xl p-6 premium-card text-center">
-          <h3 class="text-4xl font-bold mb-2">20+</h3>
-          <p class="text-gray-400">Clients</p>
-        </div>
-
-        <div class="glass rounded-3xl p-6 premium-card text-center">
-          <h3 class="text-4xl font-bold mb-2">Global</h3>
-          <p class="text-gray-400">Reach</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section
-  id="projects"
-  class="section-space relative overflow-hidden grid-bg">
-
-  <div class="soft-glow top-0 left-1/2 -translate-x-1/2"></div>
-
-  <div class="container-premium relative z-10">
+  <div class="container-premium">
 
     <!-- HEADER -->
     <div class="text-center mb-16">
 
       <h2 class="text-4xl md:text-5xl font-bold mb-5">
-        Featured Projects
+        Professional Summary
       </h2>
 
-      <p class="text-gray-400 max-w-2xl mx-auto">
-        Premium projects crafted with modern UI systems and clean code architecture.
+      <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+
+        Experienced Learning & Development professional with strong expertise
+        in instructional design, learning architecture,
+        competency-based assessment systems,
+        stakeholder management,
+        and scalable workforce development initiatives.
+
       </p>
 
     </div>
 
-    <!-- GRID -->
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+    <!-- CONTENT -->
+    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
 
-      <!-- CARD -->
-      <div class="glass rounded-[28px] overflow-hidden premium-card">
+      <!-- LEFT -->
+      <div class="glass rounded-[32px] p-8 md:p-10 premium-card">
 
-        <div class="h-[220px] sm:h-[250px] overflow-hidden">
+        <h3 class="text-2xl font-semibold mb-6">
+          Core Expertise
+        </h3>
 
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover hover:scale-110 transition duration-700">
+        <div class="flex flex-wrap gap-3">
 
-        </div>
-
-        <div class="p-5 sm:p-7">
-
-          <h3 class="text-2xl font-semibold mb-3">
-            Corporate Website
-          </h3>
-
-          <p class="text-gray-400 mb-6 leading-relaxed">
-            Elegant enterprise website with premium interface design.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-8">
-
-            <span class="tech">HTML</span>
-            <span class="tech">Tailwind</span>
-            <span class="tech">JavaScript</span>
-
-          </div>
-
-          <a
-            href="#"
-            class="block text-center py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] transition">
-
-            View Project
-
-          </a>
+          <span class="tag">Learning Design</span>
+          <span class="tag">Curriculum Design</span>
+          <span class="tag">Program Development</span>
+          <span class="tag">Instructional Design</span>
+          <span class="tag">Training Needs Analysis</span>
+          <span class="tag">Competency Framework</span>
+          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Adult Learning</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Learning Evaluation</span>
 
         </div>
 
       </div>
 
-      <!-- CARD -->
-      <div class="glass rounded-[28px] overflow-hidden premium-card">
+      <!-- RIGHT -->
+      <div class="grid grid-cols-2 gap-5">
 
-        <div class="h-[220px] sm:h-[250px] overflow-hidden">
+        <div class="glass rounded-[28px] p-7 premium-card text-center">
 
-          <img
-            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover hover:scale-110 transition duration-700">
+          <h3 class="text-5xl font-black mb-2">6+</h3>
 
-        </div>
-
-        <div class="p-5 sm:p-7">
-
-          <h3 class="text-2xl font-semibold mb-3">
-            E-Commerce Platform
-          </h3>
-
-          <p class="text-gray-400 mb-6 leading-relaxed">
-            Modern online shopping experience with premium mobile-first UX.
+          <p class="text-gray-400">
+            Years Experience
           </p>
 
-          <div class="flex flex-wrap gap-2 mb-8">
-
-            <span class="tech">React</span>
-            <span class="tech">Next.js</span>
-            <span class="tech">Stripe</span>
-
-          </div>
-
-          <a
-            href="#"
-            class="block text-center py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] transition">
-
-            View Project
-
-          </a>
-
         </div>
 
-      </div>
+        <div class="glass rounded-[28px] p-7 premium-card text-center">
 
-      <!-- CARD -->
-      <div class="glass rounded-[28px] overflow-hidden premium-card">
+          <h3 class="text-5xl font-black mb-2">20+</h3>
 
-        <div class="h-[220px] sm:h-[250px] overflow-hidden">
-
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
-            class="w-full h-full object-cover hover:scale-110 transition duration-700">
-
-        </div>
-
-        <div class="p-5 sm:p-7">
-
-          <h3 class="text-2xl font-semibold mb-3">
-            Portfolio System
-          </h3>
-
-          <p class="text-gray-400 mb-6 leading-relaxed">
-            Interactive portfolio platform with premium motion systems.
+          <p class="text-gray-400">
+            Learning Programs
           </p>
 
-          <div class="flex flex-wrap gap-2 mb-8">
+        </div>
 
-            <span class="tech">Vue</span>
-            <span class="tech">GSAP</span>
-            <span class="tech">CMS</span>
+        <div class="glass rounded-[28px] p-7 premium-card text-center">
 
-          </div>
+          <h3 class="text-5xl font-black mb-2">10+</h3>
 
-          <a
-            href="#"
-            class="block text-center py-3 rounded-2xl bg-white text-black font-medium hover:scale-[1.02] transition">
+          <p class="text-gray-400">
+            Organizations
+          </p>
 
-            View Project
+        </div>
 
-          </a>
+        <div class="glass rounded-[28px] p-7 premium-card text-center">
+
+          <h3 class="text-5xl font-black mb-2">100%</h3>
+
+          <p class="text-gray-400">
+            Professional
+          </p>
 
         </div>
 
@@ -1100,39 +691,179 @@
 
 </section>
 
-<!-- ================= EDUCATION ================= -->
+<!-- ================= EXPERIENCE ================= -->
 
-<section id="education" class="section-space">
+<section id="experience" class="section-space relative overflow-hidden">
 
   <div class="container-premium">
 
-    <div class="text-center mb-16">
+    <!-- HEADER -->
+    <div class="text-center mb-20">
 
       <h2 class="text-4xl md:text-5xl font-bold mb-5">
-        Education
+        Professional Experience
       </h2>
 
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Academic background and certifications.
+        Career journey in learning development,
+        instructional design,
+        and program management.
       </p>
 
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <!-- TIMELINE -->
+    <div class="timeline max-w-5xl mx-auto">
 
-      <div class="glass rounded-3xl p-5 sm:p-7 premium-card">
-        <h3 class="text-2xl font-semibold mb-3">Computer Science</h3>
-        <p class="text-gray-400">Bachelor degree focused on software engineering.</p>
+      <!-- ITEM -->
+      <div class="timeline-item">
+
+        <div class="glass rounded-[32px] p-8 premium-card">
+
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+
+            <div>
+
+              <h3 class="text-2xl font-bold">
+                Fidelitas Advisors
+              </h3>
+
+              <p class="text-gray-400">
+                Assistant Manager – Learning & Business Development
+              </p>
+
+            </div>
+
+            <span class="tag">
+              Nov 2025 – Present
+            </span>
+
+          </div>
+
+          <ul class="text-gray-300 leading-relaxed space-y-3 list-disc pl-5">
+
+            <li>
+              Lead planning and execution of monthly learning programs and workshops.
+            </li>
+
+            <li>
+              Oversee project coordination, stakeholder communication,
+              and operational execution.
+            </li>
+
+            <li>
+              Coordinate consultants, speakers,
+              and internal teams for successful program delivery.
+            </li>
+
+            <li>
+              Lead thought leadership and digital marketing initiatives.
+            </li>
+
+          </ul>
+
+        </div>
+
       </div>
 
-      <div class="glass rounded-3xl p-5 sm:p-7 premium-card">
-        <h3 class="text-2xl font-semibold mb-3">UI/UX Certification</h3>
-        <p class="text-gray-400">Professional interface design certification.</p>
+      <!-- ITEM -->
+      <div class="timeline-item">
+
+        <div class="glass rounded-[32px] p-8 premium-card">
+
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+
+            <div>
+
+              <h3 class="text-2xl font-bold">
+                Luarsekolah
+              </h3>
+
+              <p class="text-gray-400">
+                Course Development – Project Lead
+              </p>
+
+            </div>
+
+            <span class="tag">
+              Apr 2024 – Apr 2025
+            </span>
+
+          </div>
+
+          <ul class="text-gray-300 leading-relaxed space-y-3 list-disc pl-5">
+
+            <li>
+              Managed end-to-end learning program development.
+            </li>
+
+            <li>
+              Led collaboration with SMEs,
+              production teams,
+              and stakeholders.
+            </li>
+
+            <li>
+              Designed learner journeys based on adult learning principles.
+            </li>
+
+            <li>
+              Improved learner engagement and completion outcomes.
+            </li>
+
+          </ul>
+
+        </div>
+
       </div>
 
-      <div class="glass rounded-3xl p-5 sm:p-7 premium-card">
-        <h3 class="text-2xl font-semibold mb-3">Frontend Engineering</h3>
-        <p class="text-gray-400">Modern frontend architecture and frameworks.</p>
+      <!-- ITEM -->
+      <div class="timeline-item">
+
+        <div class="glass rounded-[32px] p-8 premium-card">
+
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+
+            <div>
+
+              <h3 class="text-2xl font-bold">
+                Skill Academy – Ruangguru
+              </h3>
+
+              <p class="text-gray-400">
+                Content Development Associate
+              </p>
+
+            </div>
+
+            <span class="tag">
+              May 2022 – Mar 2024
+            </span>
+
+          </div>
+
+          <ul class="text-gray-300 leading-relaxed space-y-3 list-disc pl-5">
+
+            <li>
+              Developed professional upskilling content and learning modules.
+            </li>
+
+            <li>
+              Collaborated with SMEs and product teams.
+            </li>
+
+            <li>
+              Supported learning performance analysis and optimization.
+            </li>
+
+            <li>
+              Contributed to standardized learning product development.
+            </li>
+
+          </ul>
+
+        </div>
+
       </div>
 
     </div>
@@ -1143,46 +874,220 @@
 
 <!-- ================= SKILLS ================= -->
 
-<section id="skills" class="section-space">
+<section id="skills" class="section-space relative overflow-hidden">
+
+  <div class="soft-glow bottom-0 right-0"></div>
 
   <div class="container-premium">
 
+    <!-- HEADER -->
     <div class="text-center mb-16">
 
       <h2 class="text-4xl md:text-5xl font-bold mb-5">
-        Skills
+        Core Competencies
       </h2>
 
       <p class="text-gray-400">
-        Technologies and expertise.
+        Expertise and professional capabilities.
       </p>
 
     </div>
 
+    <!-- GRID -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        HTML, CSS, JavaScript
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Learning Design & Development Strategy
       </div>
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        React, Vue, Next.js
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Learning Architecture & Program Development
       </div>
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        UI/UX Design
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Curriculum Design & Redesign
       </div>
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        Branding & Strategy
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Competency-Based Learning Frameworks
       </div>
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        SEO & Performance
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Instructional Design & Adult Learning
       </div>
 
-      <div class="glass rounded-3xl p-6 premium-card">
-        Team Leadership
+      <div class="glass rounded-[30px] p-8 premium-card">
+        Project Management & Stakeholder Coordination
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" class="section-space relative overflow-hidden">
+
+  <div class="container-premium">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl md:text-5xl font-bold mb-5">
+        Education & Awards
+      </h2>
+
+      <p class="text-gray-400">
+        Academic background and achievements.
+      </p>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- EDUCATION -->
+      <div class="glass rounded-[32px] p-8 premium-card">
+
+        <div class="flex items-start gap-5">
+
+          <div
+            class="w-14 h-14 rounded-2xl
+            bg-white/5 border border-white/10
+            flex items-center justify-center">
+
+            <i class="fa-solid fa-graduation-cap text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-2xl font-bold mb-2">
+              Universitas Siliwangi
+            </h3>
+
+            <p class="text-gray-300 mb-3">
+              Bachelor of Education – Indonesian Language
+            </p>
+
+            <p class="text-gray-500">
+              2015 – 2020 | GPA 3.40
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- AWARD -->
+      <div class="glass rounded-[32px] p-8 premium-card">
+
+        <div class="flex items-start gap-5">
+
+          <div
+            class="w-14 h-14 rounded-2xl
+            bg-white/5 border border-white/10
+            flex items-center justify-center">
+
+            <i class="fa-solid fa-award text-xl"></i>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-2xl font-bold mb-2">
+              Duta Baca Jawa Barat 2020
+            </h3>
+
+            <p class="text-gray-400 leading-relaxed">
+              Appointed by Dinas Perpustakaan Daerah
+              Provinsi Jawa Barat.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PROJECT EXPERIENCE ================= -->
+
+<section id="projects" class="section-space relative overflow-hidden">
+
+  <div class="container-premium">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl md:text-5xl font-bold mb-5">
+        Project Based Experience
+      </h2>
+
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Selected instructional design,
+        training,
+        and educational development projects.
+      </p>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid md:grid-cols-2 gap-7">
+
+      <div class="glass rounded-[32px] p-8 premium-card">
+        <h3 class="text-2xl font-bold mb-3">
+          Instructional Designer – Rakamin
+        </h3>
+
+        <p class="text-gray-400 leading-relaxed">
+          Designed instructional frameworks,
+          curriculum structures,
+          and learning flows for project-based learning programs.
+        </p>
+      </div>
+
+      <div class="glass rounded-[32px] p-8 premium-card">
+        <h3 class="text-2xl font-bold mb-3">
+          Module Developer – Belajar Lagi
+        </h3>
+
+        <p class="text-gray-400 leading-relaxed">
+          Developed training modules,
+          instructional materials,
+          and adult-learning frameworks.
+        </p>
+      </div>
+
+      <div class="glass rounded-[32px] p-8 premium-card">
+        <h3 class="text-2xl font-bold mb-3">
+          Academic Specialist – Pejuang Masuk PTN
+        </h3>
+
+        <p class="text-gray-400 leading-relaxed">
+          Created curriculum-aligned assessment materials
+          and learner outcome systems for UTBK preparation.
+        </p>
+      </div>
+
+      <div class="glass rounded-[32px] p-8 premium-card">
+        <h3 class="text-2xl font-bold mb-3">
+          Script Writer – Rumah Siap Kerja
+        </h3>
+
+        <p class="text-gray-400 leading-relaxed">
+          Developed educational storytelling flows,
+          learning scripts,
+          and career-readiness content.
+        </p>
       </div>
 
     </div>
@@ -1193,10 +1098,15 @@
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="section-space">
+<section
+  id="contact"
+  class="section-space relative overflow-hidden pb-32">
+
+  <div class="soft-glow bottom-[-200px] left-[-200px]"></div>
 
   <div class="container-premium max-w-5xl">
 
+    <!-- HEADER -->
     <div class="text-center mb-16">
 
       <h2 class="text-4xl md:text-5xl font-bold mb-5">
@@ -1204,29 +1114,45 @@
       </h2>
 
       <p class="text-gray-400">
-        Open for freelance projects and collaborations.
+        Open for collaboration,
+        learning initiatives,
+        and professional opportunities.
       </p>
 
     </div>
 
-    <div class="glass rounded-[32px] p-6 sm:p-10">
+    <!-- CARD -->
+    <div class="glass rounded-[36px] p-7 md:p-12">
 
       <div class="grid md:grid-cols-2 gap-10">
 
         <!-- LEFT -->
         <div>
 
-          <h3 class="text-3xl font-semibold mb-4">
+          <h3 class="text-3xl font-bold mb-5">
             Get In Touch
           </h3>
 
-          <p class="text-gray-400 leading-relaxed mb-8">
-            Feel free to contact me for work or partnership opportunities.
+          <p class="text-gray-400 leading-relaxed mb-10">
+
+            Feel free to reach out for partnerships,
+            training initiatives,
+            curriculum projects,
+            or learning development collaboration.
+
           </p>
 
           <a
-            href="mailto:maya@email.com"
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white text-black font-medium hover:scale-105 transition">
+            href="mailto:hitmeup.mayaindahk@gmail.com"
+
+            class="inline-flex items-center gap-3
+            px-7 py-4
+            rounded-2xl
+            bg-white
+            text-black
+            font-semibold
+            hover:scale-105
+            transition duration-300">
 
             <i class="fa-solid fa-paper-plane"></i>
 
@@ -1239,6 +1165,7 @@
         <!-- RIGHT -->
         <div class="space-y-5">
 
+          <!-- EMAIL -->
           <div class="contact-item">
 
             <div class="contact-icon">
@@ -1246,12 +1173,20 @@
             </div>
 
             <div>
-              <p class="text-sm text-gray-400">Email</p>
-              <p>maya@email.com</p>
+
+              <p class="text-sm text-gray-400 mb-1">
+                Email
+              </p>
+
+              <p class="break-all">
+                hitmeup.mayaindahk@gmail.com
+              </p>
+
             </div>
 
           </div>
 
+          <!-- PHONE -->
           <div class="contact-item">
 
             <div class="contact-icon">
@@ -1259,26 +1194,73 @@
             </div>
 
             <div>
-              <p class="text-sm text-gray-400">Phone</p>
-              <p>+62 812 3456 7890</p>
+
+              <p class="text-sm text-gray-400 mb-1">
+                Phone
+              </p>
+
+              <p>
+                081774985505
+              </p>
+
             </div>
 
           </div>
 
-          <!-- SOCIAL -->
-          <div class="flex items-center gap-4 pt-4">
+          <!-- LOCATION -->
+          <div class="contact-item">
 
-            <a href="#" class="social-btn">
-              <i class="fa-brands fa-instagram"></i>
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+
+              <p class="text-sm text-gray-400 mb-1">
+                Location
+              </p>
+
+              <p>
+                Jakarta, Indonesia
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- LINKEDIN -->
+          <div class="pt-4 flex gap-4">
+
+            <a
+              href="https://linkedin.com/in/maya-indah-kartika-8b3b76161/"
+              target="_blank"
+              class="social-btn">
+
+              <i class="fa-brands fa-linkedin-in"></i>
+
             </a>
 
-            <a href="#" class="social-btn">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
+            <!-- INSTAGRAM -->
+<a
+  href="https://instagram.com/USERNAME_INSTAGRAM"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="social-btn">
 
-            <a href="#" class="social-btn">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
+  <i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<!-- WHATSAPP -->
+<a
+  href="https://wa.me/6281774985505"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="social-btn">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+</a>
 
           </div>
 
@@ -1295,9 +1277,9 @@
 <!-- ================= FOOTER ================= -->
 
 <footer
-  class="border-t border-white/10 py-6 text-center text-gray-500 text-sm">
+  class="relative z-10 border-t border-white/10 py-8 text-center text-gray-500 text-sm">
 
-  © 2026 Maya Indah Kartika. All rights reserved.
+  © 2026 Maya Indah Kartika — Learning & Development Portfolio
 
 </footer>
 
@@ -1305,7 +1287,7 @@
 
 <script>
 
-  /* MOBILE MENU */
+  /* ================= MOBILE MENU ================= */
 
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -1318,7 +1300,11 @@
 
     if(isOpen){
 
-      mobileMenu.classList.remove('opacity-0','pointer-events-none');
+      mobileMenu.classList.remove(
+        'opacity-0',
+        'pointer-events-none'
+      );
+
       mobileMenu.classList.add('opacity-100');
 
       document.body.style.overflow='hidden';
@@ -1335,20 +1321,35 @@
 
   function closeMenu(){
 
-    mobileMenu.classList.add('opacity-0','pointer-events-none');
+    mobileMenu.classList.add(
+      'opacity-0',
+      'pointer-events-none'
+    );
+
     mobileMenu.classList.remove('opacity-100');
 
     document.body.style.overflow='';
 
     menuBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
 
-    isOpen=false;
+    isOpen = false;
 
   }
 
   document.querySelectorAll('.mobile-link').forEach(link=>{
 
     link.addEventListener('click',closeMenu);
+
+  });
+
+  /* ================= CURSOR LIGHT ================= */
+
+  const cursorLight = document.getElementById('cursorLight');
+
+  window.addEventListener('mousemove',(e)=>{
+
+    cursorLight.style.left = e.clientX + 'px';
+    cursorLight.style.top = e.clientY + 'px';
 
   });
 
